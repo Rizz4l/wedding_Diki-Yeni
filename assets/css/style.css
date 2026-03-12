@@ -1,0 +1,671 @@
+:root {
+    --pink: #ff0080;
+    --pink-koleas: #fdc6e2;
+    --pink-muted: #ff69b4a0;
+    --pink-hover: #ff69b4c0;
+    --pink-light: #ffb6c1;
+    --white: #ffffff;
+    --grey: #808080;
+    --light-grey: #d3d3d3;
+    --very-light-grey: #f5f5f5;
+    --dark-grey: #a9a9a9;
+    --dark: #151515;
+    --black: #000000;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+*{
+    font-family: 'Work Sans', sans-serif;
+}
+body.transition {
+    animation: fadeInAnimation ease 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.open {
+    background-color: white;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    z-index: 3;
+    overflow: hidden;
+    transition: transform 3s ease-in-out;
+}
+
+.doors {
+    width: 310px;              /* lebar total pintu */
+    height: 600px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    perspective: 1200px;       /* supaya 3D real */
+}
+
+.door {
+    width: 50%;              /* masing2 setengah */
+    height: 100%;
+    position: relative;
+    transition: transform 3s ease-in-out;
+    overflow: hidden;
+}
+
+.door img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;         
+}
+
+.door.left {
+    transform-origin: left center;   /* poros di tengah */
+}
+
+.door.right {
+    transform-origin: right center;
+}
+
+.heading-door {
+    position: absolute;
+    text-align: center;
+    width: 50%;
+    font-size: 54px;
+    margin: auto;
+}
+
+.heading-door.left {
+    left: 0;
+}
+.heading-door.right {
+    right: 0;
+}
+
+.huruf-sambung {
+    font-family: 'Sacramento', cursive;
+}
+
+.nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    list-style-type: none;
+    display: flex;
+    background-color: var(--pink);
+    height: 80px;
+    z-index: 1;
+}
+
+.nav li {
+    flex: 1;
+}
+
+.nav li a {
+    text-decoration: none;
+    color: var(--very-light-grey);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    z-index: 1;
+    position: relative;
+}
+
+.nav li a:hover {
+    color: var(--white);
+}
+
+.nav li a.nav-item-music {
+    transform: translateY(-20%);
+    font-size: 30px;
+    top: -30px;
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.nav .nav-music {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background-color: var(--dark);
+    position: absolute;
+    top: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.nav li a.rotate {
+    animation: rotateAnimation 5s linear infinite;
+}
+
+@keyframes rotateAnimation {
+    from {
+        transform: translate(0deg)
+    }
+    to {
+        transform: translate(360deg);
+    }
+}
+
+/* ================= HERO ================= */
+
+#hero-section {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    display: none; /* PENTING - sembunyikan dulu */
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#hero-section h1,
+#hero-section h5,
+#hero-section h4{
+    text-shadow:2px 2px 8px rgba(0,0,0,0.7);
+}
+
+/* background image */
+.hero-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    background-color: black;
+    z-index: 1;
+}
+
+/* overlay */
+.overplay {
+    position: absolute;
+    inset: 0;
+    background: rgba(241, 78, 149, 0.4);
+    z-index: 2;
+}
+
+#snow{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    pointer-events:none;
+    z-index:3;
+}
+
+/* teks */
+#hero-section .container {
+    position: relative;
+    z-index: 5;
+}
+
+/* jam */
+
+
+/* tombol */
+#hero-section .btn-get-started {
+    background:#e63b86;
+    color:white;
+    border:none;
+    padding:14px 35px;
+    font-weight:600;
+    letter-spacing:1px;
+    box-shadow:0 5px 15px rgba(230,59,134,0.4);
+    transition:0.3s;
+}
+
+#hero-section .btn-get-started:hover {
+    background:#d92d78;
+    transform:scale(1.05);
+}
+
+.text-pink {
+    color: var(--pink);
+}
+
+.pembuka-section {
+    padding-top: 75px;
+}
+
+.section-title {
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+.section-title h3 {
+    margin: 15px 0 0;
+}
+
+.section-title p {
+    margin: 15px auto 0 auto;
+}
+
+.section-bg {
+    background-color: var(--pink-koleas);
+}
+
+#content-section {
+    overflow: hidden;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--pink-light);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--pink);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--pink-hover);
+}
+
+.card-acara{
+background:white;
+border:1px solid #eee;
+border-radius:15px;
+box-shadow:0 8px 20px rgba(0,0,0,0.08);
+transition:0.3s;
+}
+
+.card-acara:hover{
+transform:translateY(-5px);
+}
+
+.card-acara p{
+margin-bottom:10px;
+font-size:15px;
+}
+
+.card-acara hr{
+margin:15px 0;
+}
+
+.card-acara i{
+margin-right:6px;
+color:var(--pink);
+}
+
+@media (max-width: 992px) {
+    .card-acara {
+        width: calc(50% - 10px);
+    }
+}
+
+.btn-pink{
+font-family:sans-serif;
+text-transform:uppercase;
+font-weight:bold;
+font-size:13px;
+letter-spacing:1px;
+padding:10px 22px;
+border-radius:30px;
+background:var(--pink);
+color:white;
+transition:0.3s;
+}
+
+.btn-pink i{
+color:white;
+}
+
+.btn-pink:hover{
+background:#e60073;
+}
+
+.border-pink {
+    border-radius: 15px;
+    border: 2px solid var(--pink);
+}
+
+.credit-card{
+    background: linear-gradient(135deg,#1e1e1e,#000);
+    border-radius:15px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.4);
+    padding:25px;
+    width:320px;
+    color:white;
+    position:relative;
+}
+
+.card-logo{
+    width:70px;
+    position:absolute;
+    top:15px;
+    right:15px;
+}
+
+.card-container{
+    display:flex;
+    align-items:center;
+    margin-top:50px;
+}
+
+.card-sim{
+    width:35px;
+    margin-right:12px;
+}
+
+.card-number{
+    font-family:'Courier New', monospace;
+    font-size:22px;
+    letter-spacing:2px;
+}
+
+.card-name{
+    font-family:'Courier New', monospace;
+    font-size:16px;
+    margin-top:15px;
+}
+
+.copy-button{
+    position:absolute;
+    top:10px;
+    left:15px;
+    background:white;
+    border:none;
+    padding:6px 12px;
+    border-radius:6px;
+    cursor:pointer;
+    font-size:14px;
+}
+
+.copy-button:hover{
+    background:#f1f1f1;
+}
+
+/* .video-wrapper{
+    width:100%;
+    aspect-ratio:9/16;
+    border-radius:15px;
+    overflow:hidden;
+}
+
+.video-wrapper video{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+} */
+
+#penutup-section {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    text-align: center;
+}
+
+#penutup-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0) 0%,
+        rgba(0,0,0,0.7) 60%,
+        rgba(0,0,0,1) 100%
+    ),
+    url("../img/background-tegak.jpeg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    z-index: -1;
+}
+
+.timeline {
+    list-style: none;
+    padding: 20px 0;
+    position: relative;
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--light-grey);
+    left: 50%;
+    margin-left: -1px;
+}
+
+.timeline > li {
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.timeline > li::after {
+    clear: both;
+    content: "";
+    display: block;
+}
+
+.timeline-panel {
+    width: 40%;
+    float: left;
+    border: 1px solid var(--light-grey);
+    padding: 25px;
+    border-radius: 6px;
+    position: relative;
+    background: white;
+}
+
+.timeline-inverted .timeline-panel {
+    float: right;
+}
+
+.timeline-badge {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    width: 120px;
+    height: 120px;
+    margin-left: -60px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    border: 5px solid white;
+    z-index: 100;
+}
+
+.timeline-title {
+    margin-top: 0;
+}
+
+.timeline-date {
+    display: block;
+    margin-bottom: 15px;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: gray;
+}
+
+/* MOBILE */
+@media (max-width: 992px) {
+
+.timeline::before {
+    left: 40px;
+}
+
+.timeline-panel {
+    width: calc(100% - 90px);
+    float: right;
+}
+
+.timeline-badge {
+    left: 40px;
+    margin-left: 0;
+    width: 80px;
+    height: 80px;
+}
+
+}
+
+/* ================= MOBILE OPTIMIZATION ================= */
+
+body{
+overflow-x:hidden;
+}
+
+/* DOOR MOBILE */
+@media (max-width:576px){
+
+.heading-door{
+font-size: 40px !important;
+}
+
+.heading-door.left{
+left:-20%;
+}
+
+.heading-door.right{
+right:-20%;
+}
+
+.doors{
+width:220px;
+height:420px;
+}
+
+.heading-door{
+font-size:32px;
+}
+
+}
+
+/* HERO MOBILE */
+@media (max-width:576px){
+
+#hero-section h1{
+font-size:34px;
+}
+
+#hero-section h4{
+font-size:16px;
+}
+
+#hero-section h5{
+font-size:14px;
+}
+
+}
+
+/* COUNTDOWN STYLE */
+.count-box{
+background:rgba(0,0,0,0.35);
+padding:10px;
+border-radius:10px;
+}
+
+/* TIMELINE MOBILE FIX */
+@media (max-width:768px){
+
+.timeline::before{
+left:30px;
+}
+
+.timeline-panel{
+width:calc(100% - 80px);
+float:right;
+}
+
+.timeline-badge{
+left:30px;
+width:70px;
+height:70px;
+}
+
+}
+
+/* GALLERY MOBILE */
+@media (max-width:576px){
+
+#gallery-section iframe{
+max-width:300px;
+margin:auto;
+display:block;
+}
+
+}
+
+/* HERO IMAGE FIX */
+.hero-img{
+object-position:center top;
+}
+
+/* SECTION MOBILE SPACING */
+@media (max-width:576px){
+
+section{
+padding-left:15px;
+padding-right:15px;
+}
+
+}
+
+/* BUTTON MOBILE */
+@media (max-width:576px){
+
+.btn-lg{
+font-size:14px;
+padding:10px 20px;
+}
+
+}
+
+/* DOOR TEXT MOBILE */
+@media (max-width:576px){
+
+.heading-door{
+width:100%;
+text-align:center;
+}
+
+.heading-door.left{
+top:15%;
+}
+
+.heading-door.right{
+bottom:15%;
+}
+
+}
+
+#acara-section .col-md-6{
+width:100%;
+}
+
+.card-acara{
+width:100%;
+padding:25px 20px;
+}
