@@ -670,32 +670,12 @@ width:100%;
 padding:25px 20px;
 }
 
-.vertical .carousel-inner {
-    height: 450px;
-}
-
-.vertical .carousel-item-next,
-.vertical .carousel-item-prev {
-    transform: translateY(100%);
-}
-
-.vertical .carousel-item-next.carousel-item-start,
-.vertical .carousel-item-prev.carousel-item-end {
-    transform: translateY(0);
-}
-
-.vertical .carousel-item-start {
-    transform: translateY(-100%);
-}
-
-.vertical .carousel-item-end {
-    transform: translateY(100%);
-}
-
 .img-pengantin{
-    width:260px;
-    height:320px;
-    object-fit:cover;
-    border-radius:20px;
-    border:4px solid var(--pink);
+    width: 80%;
+    max-width: 260px;
+    height: auto;
+    border-radius: 20px;
+    object-fit: cover;
+    display: block;
+    margin: auto;
 }
