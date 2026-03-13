@@ -670,12 +670,62 @@ width:100%;
 padding:25px 20px;
 }
 
-.img-pengantin{
-    width: 80%;
-    max-width: 260px;
-    height: auto;
-    border-radius: 20px;
-    object-fit: cover;
-    display: block;
-    margin: auto;
+.title-wedding{
+    text-align:center;
+    padding:20px;
+    background:#e6c3c7;
+    color:white;
+    font-size:24px;
+}
+
+.pengantin-card{
+    position:relative;
+    width:90%;
+    max-width:330px;
+    margin:40px auto;
+}
+
+.foto-pengantin{
+    width:100%;
+    border-radius:10px;
+}
+
+.overlay-nama{
+    position:absolute;
+    bottom:0;
+    width:100%;
+    background:rgba(0,0,0,0.45);
+    color:white;
+    text-align:center;
+    padding:15px;
+}
+
+.side-info{
+    position:absolute;
+    left:-45px;
+    top:80px;
+    background:#d7a3ab;
+    padding:15px 8px;
+    writing-mode:vertical-rl;
+    text-align:center;
+    color:white;
+    border-radius:5px;
+}
+
+.side-info.kanan{
+    left:auto;
+    right:-45px;
+}
+
+.side-info a{
+    color:white;
+    font-size:18px;
+    margin-top:10px;
+}
+
+.tanda{
+    text-align:center;
+    font-size:28px;
+    color:#c58f97;
+    margin:30px 0;
 }
